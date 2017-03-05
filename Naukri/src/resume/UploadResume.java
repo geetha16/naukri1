@@ -2,6 +2,7 @@ package resume;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -16,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 
+
 public class UploadResume 
 {
 	public WebDriver driver;
@@ -27,6 +29,25 @@ public class UploadResume
     	
     	//opening the naukri site
     	driver.get("https://www.naukri.com/");
+    	
+    	//handling child windows
+    	 
+    	 String beforeWH = driver.getWindowHandle();
+    	 
+
+    	 Set<String> allWH = driver.getWindowHandles();
+    	 allWH.remove(beforeWH);
+    	 for(String wh:allWH)
+    	 {
+    		 
+    		 driver.switchTo().window(wh);
+    		 String title=driver.getTitle();
+    		 System.out.println(title);
+    		 driver.close();
+    	 }
+    	 
+    	 driver.switchTo().window(beforeWH);
+    	 
     	driver.manage().window().maximize();
     	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     	//Login to naukri account
