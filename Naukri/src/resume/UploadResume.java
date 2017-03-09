@@ -70,12 +70,12 @@ public class UploadResume
         
         //script to upload new resume
         driver.findElement(By.id("uploadLink")).click();
-        driver.findElement(By.id("attachCV")).sendKeys("C:\\Users\\Geetu\\Desktop\\Geetha_Desai_Automation.docx");
+        driver.findElement(By.id("attachCV")).sendKeys("C:\\Users\\test\\Desktop\\testAutomation.docx");
         
         TakesScreenshot t=(TakesScreenshot) driver;
         Thread.sleep(5000);
         File srcFile=t.getScreenshotAs(OutputType.FILE);
-        File destFile=new File("C:/Users/Geetu/Desktop/NaukriScreenshot/FileUpload.png");
+        File destFile=new File("C:/Users/test/Desktop/NaukriScreenshot/FileUpload.png");
         FileUtils.copyFile(srcFile, destFile);
         
         driver.findElement(By.xpath("//button[@type='button']")).click();
