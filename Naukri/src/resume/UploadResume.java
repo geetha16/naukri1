@@ -70,7 +70,7 @@ public class UploadResume
         
         //script to upload new resume
         driver.findElement(By.id("uploadLink")).click();
-        driver.findElement(By.id("attachCV")).sendKeys("C:\\Users\\test\\Desktop\\testAutomation.docx");
+        driver.findElement(By.id("attachCV")).sendKeys("C:\Users\Geetu\git\Naukri\Naukri\data\MyCV.docx");
         
         TakesScreenshot t=(TakesScreenshot) driver;
         Thread.sleep(5000);
