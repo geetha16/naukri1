@@ -54,9 +54,9 @@ public class UploadResume
     	driver.findElement(By.id("login_Layer")).click();
     	
     	
-    	driver.findElement(By.id("eLogin")).sendKeys("test@gmail.com");
+    	driver.findElement(By.id("eLogin")).sendKeys("qatestbn@gmail.com");
     	
-    	driver.findElement(By.id("pLogin")).sendKeys("test123456");
+    	driver.findElement(By.id("pLogin")).sendKeys("barnesandnobles");
     	driver.findElement(By.xpath("//button[@value='Login']")).click();
     	
     	
